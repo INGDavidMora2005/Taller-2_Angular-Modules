@@ -3,11 +3,13 @@ import { CommonModule } from '@angular/common';
 
 import { EmpleadosRoutingModule } from './empleados-routing-module';
 import { TableEmpleados } from './components/table-empleados/table-empleados';
+import { EmpleadosPage } from './pages/empleados-page/empleados-page';
 
 
 @NgModule({
   declarations: [
-    TableEmpleados
+    TableEmpleados,
+    EmpleadosPage
   ],
   imports: [
     CommonModule,
