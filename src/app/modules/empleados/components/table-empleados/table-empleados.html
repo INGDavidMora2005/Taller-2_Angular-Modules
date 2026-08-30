@@ -1,1 +1,20 @@
-<p>table-empleados works!</p>
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Nombre</th>
+      <th>Cargo</th>
+      <th>Área</th>
+      <th>Salario</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let empleado of empleados">
+      <td>{{ empleado.id }}</td>
+      <td>{{ empleado.nombre }}</td>
+      <td>{{ empleado.cargo }}</td>
+      <td>{{ empleado.area }}</td>
+      <td>{{ empleado.salario }}</td>
+    </tr>
+  </tbody>
+</table>

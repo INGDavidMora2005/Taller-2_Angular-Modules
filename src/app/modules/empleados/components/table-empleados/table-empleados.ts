@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Empleado } from '../../interfaces/empleado.interface';
 
 @Component({
   selector: 'app-table-empleados',
@@ -7,5 +8,5 @@ import { Component } from '@angular/core';
   styleUrl: './table-empleados.scss',
 })
 export class TableEmpleados {
-
+  @Input() empleados: Empleado[] = [];
 }
