@@ -2,6 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { TableProductos } from './table-productos';
 import { Producto } from '../../interfaces/producto.interface';
+import { BadgeComponent } from '../../../shared/components/badge/badge.component';
 
 describe('TableProductos', () => {
   let component: TableProductos;
@@ -9,7 +10,7 @@ describe('TableProductos', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [TableProductos]
+      declarations: [TableProductos, BadgeComponent]
     })
     .compileComponents();
 
