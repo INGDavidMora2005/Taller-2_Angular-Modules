@@ -1,0 +1,24 @@
+<table class="table table-striped border">
+  <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Categoría</th>
+      <th scope="col">Precio</th>
+      <th scope="col">Stock</th>
+      <th scope="col">Disponible</th>
+    </tr>
+  </thead>
+  <tbody>
+    @for (producto of productos; track producto.id) {
+      <tr>
+        <th scope="row">{{ producto.id }}</th>
+        <td>{{ producto.nombre }}</td>
+        <td><app-badge [text]="producto.categoria" [type]="categoryMap[producto.categoria]"></app-badge></td>
+        <td>{{ producto.precio | currency }}</td>
+        <td>{{ producto.stock }}</td>
+        <td>{{ producto.disponible ? 'Sí' : 'No' }}</td>
+      </tr>
+    }
+  </tbody>
+</table>
