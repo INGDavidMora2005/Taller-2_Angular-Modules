@@ -14,7 +14,7 @@
       <tr>
         <th scope="row">{{ producto.id }}</th>
         <td>{{ producto.nombre }}</td>
-        <td>{{ producto.categoria }}</td>
+        <td><app-badge [text]="producto.categoria" [type]="categoryMap[producto.categoria]"></app-badge></td>
         <td>{{ producto.precio | currency }}</td>
         <td>{{ producto.stock }}</td>
         <td>{{ producto.disponible ? 'Sí' : 'No' }}</td>
