@@ -13,6 +13,13 @@ import { Producto } from '../interfaces/producto.interface';
   providedIn: 'root',
 })
 export class Productos {
+  /**
+   * Arreglo privado de productos inicializado con la configuración del Core.
+   *
+   * @remarks
+   * Los datos provienen de {@link PRODUCTOS_CONFIG} y no deben ser
+   * modificados directamente desde los componentes.
+   */
   private productos: Producto[] = PRODUCTOS_CONFIG;
 
   /**
