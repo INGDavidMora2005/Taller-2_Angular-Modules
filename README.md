@@ -126,3 +126,15 @@ src/app/modules/users/components/table-users/
 - Todos los componentes deben pertenecer a un NgModule
 - Mantener una estructura clara favorece la escalabilidad y mantenibilidad
 - Usar Angular CLI evita errores de configuración manual
+
+## 🌐 APIs Consultadas
+
+### Países — [countries.dev](https://countries.dev)
+
+El módulo `paises` consume la API pública y gratuita **countries.dev** para obtener el listado de países, limitando la respuesta a los campos `name,capital,region,population,flags` mediante el parámetro `fields` de la petición. No requiere API key.
+
+La interfaz `Pais` (`src/app/modules/paises/interfaces/pais.interface.ts`) fue generada con [quicktype.io](https://quicktype.io) a partir de una muestra real de la respuesta de esta API.
+
+A diferencia de los módulos `empleados` y `productos`, cuyos datos están precargados de forma síncrona en el Core del proyecto, el módulo `paises` obtiene sus datos de forma asíncrona mediante `HttpClient`, por lo que su servicio expone un `Observable<Pais[]>` y su página maneja explícitamente los estados de carga y error mientras se resuelve la petición HTTP.
+
+**¿Por qué no `restcountries.com/v3.1`?** Esta era la API sugerida originalmente en la guía del taller, pero se confirmó en vivo que el servicio está deprecado y sus endpoints devuelven error. Por esto se optó por countries.dev como alternativa gratuita y sin autenticación que expone el mismo tipo de datos.
