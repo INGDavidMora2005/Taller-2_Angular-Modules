@@ -1,1 +1,22 @@
-<p>table-paises works!</p>
+<table class="table table-striped border">
+  <thead>
+    <tr>
+      <th scope="col">Nombre</th>
+      <th scope="col">Capital</th>
+      <th scope="col">Región</th>
+      <th scope="col">Población</th>
+      <th scope="col">Bandera</th>
+    </tr>
+  </thead>
+  <tbody>
+    @for (pais of paises; track pais.name) {
+      <tr>
+        <th scope="row">{{ pais.name }}</th>
+        <td>{{ pais.capital }}</td>
+        <td>{{ pais.region }}</td>
+        <td>{{ pais.population | number }}</td>
+        <td><img [src]="pais.flags.png" [alt]="pais.name" width="40"></td>
+      </tr>
+    }
+  </tbody>
+</table>

@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Pais } from '../../interfaces/pais.interface';
 
 @Component({
   selector: 'app-table-paises',
@@ -7,5 +8,5 @@ import { Component } from '@angular/core';
   styleUrl: './table-paises.scss',
 })
 export class TablePaises {
-
+  @Input() paises: Pais[] = [];
 }
