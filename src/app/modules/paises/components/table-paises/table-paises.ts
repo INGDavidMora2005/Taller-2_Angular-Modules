@@ -29,4 +29,16 @@ export class TablePaises {
    * Si no se proporciona, se inicializa como un arreglo vacío.
    */
   @Input() paises: Pais[] = [];
+
+  /**
+   * Oculta la imagen de la bandera si la URL falla al cargar.
+   *
+   * @remarks
+   * Algunos países en la API traen URLs de bandera fuera del
+   * CDN estándar (ej. enlaces directos a Wikipedia) que pueden
+   * no cargar correctamente.
+   */
+  onFlagError(event: Event): void {
+    (event.target as HTMLImageElement).style.display = 'none';
+  }
 }
