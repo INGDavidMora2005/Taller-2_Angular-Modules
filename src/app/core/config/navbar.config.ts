@@ -17,4 +17,5 @@ export const NAVBAR_ITEMS: NavbarItem[] = [
     { label: 'Usuarios', url: '/users' },
     { label: 'Productos', url: '/productos' },
     { label: 'Empleados', url: '/empleados' },
-] 
+    { label: 'Países', url: '/paises' },
+]

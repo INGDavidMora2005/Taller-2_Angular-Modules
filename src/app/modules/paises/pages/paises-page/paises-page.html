@@ -1,0 +1,7 @@
+@if (cargando) {
+  <p>Cargando países...</p>
+} @else if (error) {
+  <p>Ocurrió un error al consultar la API de países.</p>
+} @else {
+  <app-table-paises [paises]="paises"></app-table-paises>
+}
