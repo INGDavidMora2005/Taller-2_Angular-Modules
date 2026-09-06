@@ -10,7 +10,7 @@ import { Pais } from '../../interfaces/pais.interface';
  * Su responsabilidad es solicitar los datos de países al servicio
  * {@link Paises} e interactuar con el componente {@link TablePaises}
  * para su renderización. A diferencia de {@link EmpleadosPage} y
- * {@link ProductosPage}, la consulta es asíncrona, por lo que este
+ * {@link CursosPage}, la consulta es asíncrona, por lo que este
  * componente además controla los estados de carga y error mientras
  * se resuelve la petición HTTP.
  *
