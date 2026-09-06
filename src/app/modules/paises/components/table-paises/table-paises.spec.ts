@@ -47,4 +47,13 @@ describe('TablePaises', () => {
     expect(cells[1].textContent.trim()).toBe(mockPaises[0].capital);
     expect(cells[2].textContent.trim()).toBe(mockPaises[0].region);
   });
+
+  it('onFlagError() debería ocultar la imagen poniendo style.display = "none"', () => {
+    const img = document.createElement('img');
+    const event = { target: img } as unknown as Event;
+
+    component.onFlagError(event);
+
+    expect(img.style.display).toBe('none');
+  });
 });

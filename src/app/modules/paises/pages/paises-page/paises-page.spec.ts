@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { of } from 'rxjs';
+import { of, throwError } from 'rxjs';
 
 import { PaisesPage } from './paises-page';
 import { TablePaises } from '../../components/table-paises/table-paises';
@@ -47,5 +47,29 @@ describe('PaisesPage', () => {
     expect(component.paises).toEqual(mockPaises);
     expect(component.cargando).toBe(false);
     expect(component.error).toBe(false);
+  });
+
+  it('debería manejar error de la API activando error=true y cargando=false', () => {
+    const mockPaisesServiceConError = {
+      getPaises: () => throwError(() => new Error('Error simulado'))
+    };
+
+    TestBed.resetTestingModule();
+
+    return TestBed.configureTestingModule({
+      declarations: [PaisesPage, TablePaises],
+      providers: [
+        { provide: Paises, useValue: mockPaisesServiceConError }
+      ]
+    })
+    .compileComponents()
+    .then(() => {
+      fixture = TestBed.createComponent(PaisesPage);
+      component = fixture.componentInstance;
+      fixture.detectChanges();
+
+      expect(component.error).toBe(true);
+      expect(component.cargando).toBe(false);
+    });
   });
 });
