@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Curso } from '../../interfaces/curso.interface';
 
 @Component({
   selector: 'app-table-cursos',
@@ -7,5 +8,5 @@ import { Component } from '@angular/core';
   styleUrl: './table-cursos.scss',
 })
 export class TableCursos {
-
+  @Input() cursos: Curso[] = [];
 }
