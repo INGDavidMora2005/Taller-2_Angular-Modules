@@ -1,0 +1,22 @@
+<table class="table table-striped border">
+  <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Docente</th>
+      <th scope="col">Duración (horas)</th>
+      <th scope="col">Modalidad</th>
+    </tr>
+  </thead>
+  <tbody>
+    @for (curso of cursos; track curso) {
+      <tr>
+        <th scope="row">{{ curso.id }}</th>
+        <td>{{ curso.nombre }}</td>
+        <td>{{ curso.docente }}</td>
+        <td>{{ curso.duracionHoras }}</td>
+        <td>{{ curso.modalidad }}</td>
+      </tr>
+    }
+  </tbody>
+</table>
